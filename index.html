@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Website_B08901063</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <style type = "text/css">
+    .h1title{
+        color:#0066FF;font-weight:bold;
+        text-align:center;padding:10px;
+    }
+    .h2title{color:#0066FF}
+    .url{color:red}
+    .picturebox{
+        width:250px; height:auto; float:left; display:inline;
+        position:relative;left:20px;
+    }
+    .articlebox{
+        width:900px;height:auto;float:left;display:inline;
+        position:relative;
+    }
+    .audiobox{position:absolute;left:0px;top:25px;}
+    .timebox{position:absolute;right:20px;top:50px;}
+    </style>
+    <script language="JavaScript">
+        function startTime()   
+        {   
+            var today=new Date();
+            var yyyy = today.getFullYear();
+            var MM = today.getMonth()+1;
+            var dd = today.getDate();
+            var hh=today.getHours();
+            var mm=today.getMinutes();
+            var ss=today.getSeconds();
+            dd=checkTime(dd);
+            mm=checkTime(mm);   
+            ss=checkTime(ss);
+            document.getElementById('nowDateTimeSpan').innerHTML=MM+"-"+dd+"-"+yyyy+" " + hh+":"+mm+":"+ss;   
+            setTimeout('startTime()',1000);
+        }   
+
+        function checkTime(i)   
+        {   
+            if (i<10){
+                i="0" + i;
+            }   
+                return i;
+        }  
+    </script>
+</head>
+<body style = "background-color:#CCEEFF" onload="startTime()">
+    <h1><div class = "h1title" style = "margin:0px">計算機概論HW3 B08901063 盧可程</div></h1>
+    <div class = "picturebox">
+        <h2 class = "h2title">Picture</h2>
+        <img src = "picture.jpg"></img>
+    </div>
+    <div class = "articlebox">
+        <h2 class = "h2title">Brief Biography</h2>
+        <p>
+            盧可程，學號B08901063。曾就讀於桃園的
+            <a href = "https://www.fdhs.tyc.edu.tw/school.htm"><span class = "url">復旦高中</span></a>
+            ，現在則是
+            <a href = "https://web.ee.ntu.edu.tw/"><span class = "url">電機系</span></a>
+            二年級的學生。
+        </p>
+        <p>
+            興趣是打羽球，有時會在
+            <a href = "https://bwfbadminton.com/"><span class = "url">世界羽聯官網</span></a>
+            看一些有關國際比賽的新聞或影片。另外也喜歡遊戲和動畫，常在
+            <a href = "https://forum.gamer.com.tw/"><span class = "url">巴哈姆特</span></a>
+            上瀏覽相關資訊。習慣以
+            <a href = "https://term.ptt.cc/"><span class = "url">批踢踢實業坊</span></a>
+            這類論壇代替新聞網站，反正真的新聞也是從這裡抄的。
+        </p>
+    </div>
+    <div class = "audiobox" >
+        <audio autoplay = "autoplay" controls = "controls" loop = "loop" preload = "auto" src = "Afterglow.mp3">
+        你的瀏覽器不支援audio標籤
+        </audio>
+    </div>
+    <div class = "timebox" id="nowDateTimeSpan"></div>
+</body>
+</html>
